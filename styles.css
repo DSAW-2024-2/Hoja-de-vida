@@ -1,221 +1,237 @@
-/* Estilos generales (mobile-first) */
-body {
-    font-family: Arial, sans-serif; /* Fuente principal de la página */
-    background-color: #f4f4f4; /* Color de fondo de la página */
-    margin: 0; /* Elimina el margen por defecto del body */
-    padding: 0; /* Elimina el padding por defecto del body */
-    box-sizing: border-box; /* Hace que padding y border se incluyan en el ancho y alto totales */
-    color: #333; /* Color del texto principal */
+:root{
+  --bg:#0b1220;
+  --card:#071428;
+  --muted:#a9b4bf;
+  --accent-1:#ff9f1c;
+  --accent-2:#7ee7c0;
+  --glass: rgba(255,255,255,0.03);
+  --glass-2: rgba(255,255,255,0.02);
+  --glass-border: rgba(255,255,255,0.04);
+  --radius-lg: 14px;
 }
 
-/* Barra lateral */
-.sidebar {
-    width: 100%; /* Ancho completo para dispositivos móviles */
-    background-color: #000; /* Color de fondo negro para la barra lateral */
-    color: hwb(66 0% 0%); /* Color del texto en la barra lateral (casi blanco) */
-    padding: 20px; /* Espacio interno en la barra lateral */
-    box-shadow: none; /* No se aplica sombra en móviles */
-    position: relative; /* Posición relativa para permitir la alineación de elementos */
-    display: flex; /* Flexbox para distribuir elementos verticalmente */
-    flex-direction: column; /* Los elementos se alinean en columna */
-    align-items: center; /* Centra los elementos horizontalmente */
+/* Reset & base */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  background: radial-gradient(1200px 600px at 10% 10%, rgba(126,231,192,0.06), transparent 8%),
+              linear-gradient(180deg,#071026 0%, #071b2b 60%);
+  color:#e6eef6;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  padding:20px;
+  line-height:1.45;
+  -webkit-tap-highlight-color: transparent;
 }
 
-/* Imagen de perfil */
-.sidebar .photo img {
-    width: 140px; /* Ancho de la imagen de perfil en móviles */
-    height: auto; /* Mantiene la proporción de la imagen */
-    border-radius: 10%; /* Imagen redonda */
-    border: 3px solid #ffa11e; /* Borde alrededor de la imagen */
+/* Layout */
+.wrap{
+  max-width:1200px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns: 1fr;
+  gap:20px;
+  align-items:start;
+  padding-bottom:28px;
+}
+@media(min-width:900px){
+  .wrap{grid-template-columns: 340px 1fr; gap:28px}
 }
 
-/* Barra divisora */
-.divider {
-    width: 100%; /* Asegura que la línea divisoria ocupe el 100% del ancho de la barra lateral */
-    height: 4; /* Aumenta la altura de la línea para hacerla más gruesa */
-    background-color: #ffa11e; /* Mantiene el color de la línea divisoria */
-    margin:  0;
-    padding: 0; /* Aumenta el margen superior e inferior para darle más espacio */
+/* Profile / Sidebar */
+.profile-card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius:var(--radius-lg);
+  padding:16px;
+  border:1px solid var(--glass-border);
+  box-shadow: 0 10px 30px rgba(2,6,23,0.45);
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  align-items:center;
+  position:relative;
+  max-height: none;
+  overflow: visible;
 }
 
-/* Navegación de la barra lateral */
-.sidebar nav ul li {
-    margin-bottom: 10px; /* Espacio entre elementos de la lista */
-    text-align: center; /* Centra el texto */
+/* FOTO: estilo original tal como en tu código inicial */
+.photo img{
+  width:140px;       /* como en tu código inicial */
+  height:auto;       /* mantiene la proporción original */
+  border-radius:10%; /* igual que el original */
+  border:3px solid #ffa11e; /* borde naranja */
+  display:block;
 }
 
-/* Enlaces de la barra lateral */
-.sidebar nav ul li a {
-    font-size: 16px; /* Tamaño de fuente ligeramente más pequeño en móviles */
-    padding: 8px; /* Espacio interno dentro de los enlaces */
-    color: #ffa11e; /* Color del texto de los enlaces */
-    text-decoration: none; /* Elimina el subrayado de los enlaces */
-    transition: background-color 0.3s; /* Transición suave para el color de fondo al hacer hover */
+/* Name */
+.name{text-align:center;margin-top:6px}
+.name h1{font-size:18px;margin:6px 0 0;font-weight:700}
+.name p{margin:6px 0 0;color:var(--muted);font-size:13px}
+
+/* Nav buttons */
+.sidebar-nav{width:100%;display:flex;flex-direction:column;gap:8px}
+@media(min-width:520px){ .sidebar-nav{flex-direction:column} }
+.nav-btn{cursor:pointer;display:block;padding:10px;border-radius:10px;color:var(--muted);text-decoration:none;font-weight:700;text-align:center;border:1px solid rgba(255,255,255,0.02);background:linear-gradient(180deg,rgba(255,255,255,0.007),transparent)}
+.nav-btn:hover{ background: rgba(255,255,255,0.02); color:#fff; transform: translateY(-2px) }
+.nav-btn.active{background:linear-gradient(90deg,var(--accent-1),var(--accent-2)); color:#071428; box-shadow: 0 8px 24px rgba(18,27,39,0.55)}
+
+/* Divider */
+.divider{width:100%;height:1px;border:none;background:rgba(255,255,255,0.03);margin:10px 0}
+
+/* Contactos */
+.contact{
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  align-items:stretch;
+}
+@media(min-width:520px){
+  .contact{flex-direction:row;flex-wrap:wrap;justify-content:center;gap:8px}
+}
+.contact a{
+  display:inline-flex;
+  gap:8px;
+  align-items:center;
+  justify-content:center;
+  padding:8px 10px;
+  border-radius:10px;
+  color:var(--muted);
+  text-decoration:none;
+  font-size:13px;
+  border:1px solid rgba(255,255,255,0.02);
+  background: linear-gradient(180deg, rgba(255,255,255,0.007), transparent);
+}
+.contact a:hover{ transform:translateY(-3px); color:#fff; box-shadow:0 6px 20px rgba(2,6,23,0.4) }
+
+/* Skill bars */
+.skill-list{width:100%;margin-top:6px;display:flex;flex-direction:column;gap:8px}
+.skill{display:flex;align-items:center;gap:10px}
+.skill .label{color:var(--muted);font-size:13px;width:110px}
+.bar{height:10px;border-radius:999px;background:var(--glass-2);overflow:hidden;flex:1}
+.bar > i{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--accent-1), var(--accent-2));transition:width .8s cubic-bezier(.2,.9,.25,1)}
+
+/* Main card: limite de altura y layout de columna para header + sections + footer */
+.card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.012), rgba(255,255,255,0.006));
+  border-radius:var(--radius-lg);
+  padding:18px;
+  border:1px solid var(--glass-border);
+  box-shadow: 0 14px 40px rgba(2,6,23,0.5);
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  min-height: 300px;
 }
 
-/* Enlaces de redes sociales */
-.redes nav ul li a {
-    font-size: 16px; /* Tamaño de fuente para los enlaces de redes sociales */
-    color: #ffa11e; /* Color del texto de los enlaces de redes sociales */
+/* En pantallas grandes fijamos altura máxima para que no empuje la viewport */
+@media(min-width:900px){
+  .card{
+    max-height: calc(100vh - 40px); /* deja algo de margen superior/inferior */
+  }
 }
 
-/* Contenido principal */
-.content {
-    margin: 0; /* Elimina el margen lateral en móviles */
-    padding: 20px; /* Espacio interno dentro del contenido */
+/* Header */
+.resume-header{display:flex;flex-direction:column;gap:8px;margin-bottom:0}
+@media(min-width:700px){ .resume-header{flex-direction:row;justify-content:space-between;align-items:center} }
+.title h2{margin:0;font-size:20px}
+.title p{margin:6px 0 0;color:var(--muted);font-size:14px;max-width:820px}
+
+/* SECTIONS WRAPPER: scroll independiente (ocupa el espacio restante dentro de .card) */
+.sections-wrap{
+  overflow-y:auto;
+  padding-right:8px; /* espacio para scroll */
+  scroll-behavior:smooth;
+  max-height: calc(100vh - 240px);
 }
 
-/* Estilo del título principal */
-h1 {
-    text-align: center; /* Centra el texto del título principal */
-    color: #333; /* Color del texto del título */
-    font-size: 24px; /* Tamaño de fuente más pequeño en móviles */
+/* scrollbar estilo igual que profile-card */
+.sections-wrap::-webkit-scrollbar,
+.profile-card::-webkit-scrollbar{
+  width:8px;
+}
+.sections-wrap::-webkit-scrollbar-thumb,
+.profile-card::-webkit-scrollbar-thumb{
+  background: rgba(255,255,255,0.05);
+  border-radius:8px;
 }
 
-/* Estilo de los subtítulos (h2) */
-h2 {
-    color: #ffa11e; /* Color del texto de los subtítulos */
-    border-bottom: 2px solid #ffa11e; /* Línea inferior debajo de los subtítulos */
-    padding-bottom: 8px; /* Espacio debajo de los subtítulos */
-    margin-bottom: 15px; /* Margen inferior de los subtítulos */
-    font-size: 20px; /* Tamaño de fuente más pequeño en móviles */
+/* Cada sección con padding equilibrado */
+.section{margin-top:12px;padding:12px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.008), transparent)}
+.section h3{margin:0 0 8px;font-size:16px;color:#fff;display:flex;align-items:center;gap:10px}
+.muted{color:var(--muted);font-size:14px}
+
+/* Grid interno */
+.grid-2{display:grid;grid-template-columns:1fr;gap:12px}
+@media(min-width:700px){.grid-2{grid-template-columns:1fr 1fr}}
+
+/* Projects */
+.projects{display:grid;grid-template-columns:1fr;gap:12px}
+@media(min-width:900px){ .projects{grid-template-columns:repeat(2,1fr)} }
+.project{
+  padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,0.02);
+  background: linear-gradient(180deg, rgba(255,255,255,0.008), rgba(255,255,255,0.004));
+  transition: transform .32s cubic-bezier(.2,.9,.25,1), box-shadow .32s;
+  will-change: transform; position:relative; overflow:hidden;
+}
+.project:hover{ transform: translateY(-8px) scale(1.01); box-shadow: 0 18px 50px rgba(2,6,23,0.55) }
+.project::after{
+  content:""; position:absolute; inset:0;
+  background:linear-gradient(120deg, rgba(255,159,30,0.02), rgba(126,231,192,0.02));
+  pointer-events:none; mix-blend-mode: screen; opacity:0; transition: opacity .35s;
+}
+.project:hover::after{ opacity:1 }
+
+/* Buttons */
+.btn{
+  display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:10px;text-decoration:none;font-weight:700;border:1px solid rgba(255,255,255,0.04);
+  background:linear-gradient(90deg, rgba(255,255,255,0.01), transparent); color:var(--muted);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.btn:hover{ transform: translateY(-4px); box-shadow: 0 10px 30px rgba(2,6,23,0.45) }
+
+.btn.primary{
+  color:#08101a;border:0;background: linear-gradient(90deg,var(--accent-1),var(--accent-2));
+  background-size:200% 200%; animation: shine 6s linear infinite;
+}
+@keyframes shine{ 0%{ background-position:0% 50% } 50%{ background-position:100% 50% } 100%{ background-position:0% 50% } }
+
+/* Typography, lists */
+ul{padding-left:18px;margin:10px 0}
+li{margin-bottom:8px;font-size:14px}
+h4{margin:0 0 6px;font-size:15px}
+
+/* Footer */
+footer{margin-top:0;display:flex;flex-direction:column;gap:8px}
+@media(min-width:700px){ footer{flex-direction:row;justify-content:space-between} }
+
+/* Links emphasis */
+a{color:var(--accent-1)}
+a:hover{color:var(--accent-2)}
+
+/* Ocultado por el switch de secciones (usado por JS) */
+.hidden-by-toggle{display:none !important;}
+
+/* Sticky sidebar adjustments para no empujar la página */
+@media(min-width:900px){
+  .profile-card{
+    position:sticky; top:20px; align-self:start;
+    max-height: calc(100vh - 40px); overflow-y: auto; padding-right:12px; padding-left:12px;
+  }
+  /* Manteniendo el tamaño de foto original (140px) */
+  .photo img{ width:140px; height:auto; border-radius:10%; border:3px solid #ffa11e; }
+  .profile-card::-webkit-scrollbar{ width:8px; }
+  .profile-card::-webkit-scrollbar-thumb{ background: rgba(255,255,255,0.05); border-radius:8px }
 }
 
-/* Estilo de los subtítulos de tercer nivel (h3) */
-h3 {
-    color: #333; /* Color del texto de los subtítulos de tercer nivel */
-    margin-top: 15px; /* Margen superior de los subtítulos de tercer nivel */
-    margin-bottom: 8px; /* Margen inferior de los subtítulos de tercer nivel */
-    font-size: 18px; /* Tamaño de fuente más pequeño en móviles */
-}
+/* Focus visible */
+:focus{outline:3px solid rgba(126,231,192,0.14);outline-offset:3px}
 
-/* Estilo para las listas */
-ul {
-    list-style-type: none; /* Elimina los puntos de la lista */
-    padding: 0; /* Elimina el relleno por defecto de la lista */
-}
-
-/* Estilo para los elementos de las listas */
-li {
-    margin-bottom: 8px; /* Espacio entre los elementos de la lista */
-    font-size: 14px; /* Tamaño de fuente más pequeño en móviles */
-}
-
-/* Estilo general de las secciones */
-.section {
-    margin-bottom: 15px; /* Espacio inferior entre secciones */
-    display: none; /* Oculta todas las secciones por defecto */
-}
-
-/* Muestra la sección seleccionada*/
-.section:target {
-    display: block; /* Muestra la sección seleccionada */
-}
-
-/* Estilo para las listas dentro de las secciones */
-.section ul {
-    padding-left: 15px; /* Relleno a la izquierda para listas dentro de secciones */
-}
-
-/* Estilo para los elementos de lista dentro de las secciones */
-.section ul li {
-    padding-left: 8px; /* Relleno a la izquierda para elementos de lista dentro de secciones */
-    position: relative; /* Permite la colocación absoluta de elementos hijos */
-}
-
-/* Punto antes de cada elemento de lista */
-.section ul li::before {
-    content: "•"; /* Añade un punto antes de cada elemento de lista */
-    position: absolute; /* Coloca el punto de forma absoluta */
-    left: 0; /* Alinea el punto a la izquierda */
-    color: #ffa11e; /* Color del punto */
-}
-
-/* Estilos para pantallas de 768px o más (tablets) */
-@media (min-width: 768px) {
-    .sidebar {
-        width: 230px; /* Ancho fijo para la barra lateral en tablets */
-        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Aplica sombra a la barra lateral */
-        position: fixed; /* Fija la barra lateral en pantallas más grandes */
-        height: 100%; /* Altura completa de la barra lateral */
-    }
-
-    .content {
-        margin-left: 270px; /* Deja espacio a la izquierda para la barra lateral */
-        padding: 30px; /* Aumenta el padding del contenido */
-    }
-
-    h1 {
-        font-size: 28px; /* Incrementa el tamaño del título principal */
-    }
-
-    h2 {
-        font-size: 22px; /* Incrementa el tamaño de los subtítulos */
-    }
-
-    h3 {
-        font-size: 20px; /* Incrementa el tamaño de los subtítulos de tercer nivel */
-    }
-
-    li {
-        font-size: 16px; /* Incrementa el tamaño de los elementos de lista */
-    }
-}
-
-/* Estilos para pantallas de 1024px o más (desktop) */
-@media (min-width: 1024px) {
-    .sidebar {
-        width: 250px; /* Aumenta el ancho de la barra lateral */
-    }
-
-    .content {
-        margin-left: 280px; /* Ajusta el margen izquierdo para el contenido */
-        padding: 40px; /* Aumenta el padding del contenido */
-    }
-
-    h1 {
-        font-size: 32px; /* Incrementa aún más el tamaño del título principal */
-    }
-
-    h2 {
-        font-size: 24px; /* Incrementa aún más el tamaño de los subtítulos */
-    }
-
-    h3 {
-        font-size: 22px; /* Incrementa aún más el tamaño de los subtítulos de tercer nivel */
-    }
-
-    li {
-        font-size: 18px; /* Incrementa aún más el tamaño de los elementos de lista */
-    }
-}
-@media (min-width: 1440px) {
-    .sidebar {
-        width: 300px;
-        font-size: 30px; /* Aumenta aún más el ancho de la barra lateral */
-    }
-
-    .content {
-        margin-left: 320px; /* Ajusta el margen izquierdo para el contenido */
-        padding: 50px; /* Aumenta el padding del contenido */
-    }
-
-    h1 {
-        font-size: 40px; /* Incrementa el tamaño del título principal */
-    }
-
-    h2 {
-        font-size: 30px; /* Incrementa el tamaño de los subtítulos */
-    }
-
-    h3 {
-        font-size: 26px; /* Incrementa el tamaño de los subtítulos de tercer nivel */
-    }
-
-    li {
-        font-size: 20px; /* Incrementa el tamaño de los elementos de lista */
-    }
-    nav ul li {
-        font-size: 30px;
-    }
+/* Print tweaks */
+@media print{
+  body{background:#fff;color:#000;padding:0}
+  .profile-card, .card{box-shadow:none;border:0;background:#fff}
+  .photo img{border-radius:6px}
 }
