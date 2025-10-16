@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hoja de vida — Samuel Andrés Rodríguez Ulloa</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="wrap">
+
+    <!-- SIDEBAR / PROFILE -->
+    <aside class="profile-card" aria-label="Perfil">
+      <div class="photo">
+        <!-- Volví al estilo original: ancho 140px, height:auto, border-radius:10%, borde naranja -->
+        <img src="foto-mia.jpg" alt="Samuel Andres Rodriguez Ulloa">
+      </div>
+
+      <div class="name">
+        <h1>Samuel Andrés Rodríguez Ulloa</h1>
+        <p class="muted">Estudiante — Ingeniería Informática, Universidad de la Sabana</p>
+      </div>
+
+      <!-- NAV por secciones -->
+      <nav aria-label="Navegación por secciones" class="sidebar-nav">
+        <a class="nav-btn active" data-target="all" href="#all">Ver todo</a>
+        <a class="nav-btn" data-target="informacion-personal" href="#informacion-personal">Información personal</a>
+        <a class="nav-btn" data-target="educacion" href="#educacion">Educación</a>
+        <a class="nav-btn" data-target="experiencia" href="#experiencia">Experiencia</a>
+        <a class="nav-btn" data-target="proyectos" href="#proyectos">Proyectos</a>
+        <a class="nav-btn" data-target="habilidades" href="#habilidades">Habilidades</a>
+        <a class="nav-btn" data-target="intereses-hobbies" href="#intereses-hobbies">Intereses</a>
+      </nav>
+
+      <hr class="divider" />
+
+      <div class="contact" aria-label="Contactos">
+        <a href="tel:+573126540694" aria-label="Llamar a Samuel">📞 312 654 0694</a>
+        <a href="mailto:rodriguez.samuel2006@gmail.com" aria-label="Email personal">✉️ rodriguez.samuel2006@gmail.com</a>
+        <a href="mailto:samuelroul@unisabana.edu.co" aria-label="Email institucional">🏫 samuelroul@unisabana.edu.co</a>
+        <a href="https://www.linkedin.com/in/samuel-rodr%C3%ADguez-b004302b7" target="_blank" rel="noopener">🔗 LinkedIn</a>
+        <a href="https://github.com/sam200630" target="_blank" rel="noopener">🐙 GitHub: <strong>sam200630</strong></a>
+        <a href="https://proyecto-final-fe-parejaendeclive.vercel.app" target="_blank" rel="noopener" class="btn primary">Ver Wheels (demo)</a>
+      </div>
+
+      <div class="skill-list" aria-hidden="false">
+        <div class="skill"><span class="label">Frontend</span><div class="bar"><i style="width:90%"></i></div></div>
+        <div class="skill"><span class="label">Backend</span><div class="bar"><i style="width: 75%"></i></div></div>
+        <div class="skill"><span class="label">IoT / Embebidos</span><div class="bar"><i style="width:55%"></i></div></div>
+        <div class="skill"><span class="label">Bases de datos</span><div class="bar"><i style="width:70%"></i></div></div>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="card" role="main">
+      <header class="resume-header">
+        <div class="title">
+          <h2>Perfil profesional</h2>
+          <p class="muted">
+            Estudiante de Ingeniería Informática con enfoque en arquitectura de software y experiencia práctica en proyectos web, móviles e IoT.
+            Aplico buenas prácticas (SOLID), despliegue con Docker y soluciones en Firebase. Busco oportunidades para aprender y aportar en equipos de desarrollo.
+          </p>
+        </div>
+        <div class="meta muted">
+          <div><strong>Edad:</strong> 19</div>
+          <div><strong>Ubicación:</strong> Cajicá, Colombia</div>
+        </div>
+      </header>
+
+      <!-- WRAPPER scrollable para secciones (scroll independiente) -->
+      <div class="sections-wrap" id="sections-wrap" tabindex="0" role="region" aria-label="Contenido de la hoja de vida">
+        <section id="informacion-personal" class="section">
+          <h3>Información personal</h3>
+          <ul>
+            <li><strong>Edad:</strong> 19 años</li>
+            <li><strong>Teléfono:</strong> <a href="tel:+573126540694">312 654 0694</a></li>
+            <li><strong>Correo institucional:</strong> <a href="mailto:samuelroul@unisabana.edu.co">samuelroul@unisabana.edu.co</a></li>
+            <li><strong>Correo personal:</strong> <a href="mailto:rodriguez.samuel2006@gmail.com">rodriguez.samuel2006@gmail.com</a></li>
+            <li><strong>Usuario GitHub:</strong> sam200630 </li>
+          </ul>
+        </section>
+
+        <section id="educacion" class="section">
+          <h3>Educación</h3>
+          <div class="grid-2">
+            <div>
+              <h4>Universidad de la Sabana</h4>
+              <p class="muted">Ingeniería Informática — Ingreso: ciclo 2023-1. Actualmente cursando 6° semestre. Énfasis en Arquitectura de Software (en proceso).</p>
+              <p class="muted">Beca de excelencia (15%).</p>
+            </div>
+            <div>
+              <h4>Colegio — Gimnasio San Angelo</h4>
+              <p class="muted">Graduado con honores (2022).</p>
+            </div>
+          </div>
+
+          <strong><p class="muted">Formación adicional:</p></strong>
+          <ul class="muted">
+            <li>Inglés: British Council (6–14 años) y SmartR (15–18 años) — Nivel B2 completado.</li>
+            <li>3 semestres en Universidad Sergio Arboleda: 2 semestres de Robótica y 1 de Desarrollo de Videojuegos.</li>
+            <li>Sub-Secretario de RAS la rama de IEEE de la univesidad de la sabana </li>
+          </ul>
+        </section>
+
+        <section id="experiencia" class="section">
+          <h3>Experiencia</h3>
+          <ul>
+            <li><strong>Proyectos académicos y freelance:</strong> desarrollo de interfaces, APIs y sistemas integrales (Python, Java, C++).</li>
+            <li><strong>Roles:</strong> coordinación de entregas y control de versiones en equipos universitarios.</li>
+          </ul>
+        </section>
+
+        <section id="proyectos" class="section">
+          <h3>Proyectos destacados</h3>
+
+          <div class="projects">
+            <article class="project">
+              <h4>Wheels — Sistema de transporte estudiantil (Web)</h4>
+              <p class="muted">Aplicación web para coordinar transporte estudiantil. Rutas, reservas y panel administrativo.
+                <a href="https://proyecto-final-fe-parejaendeclive.vercel.app" target="_blank" rel="noopener">Ver demo</a>.
+              </p>
+              <p class="muted"><strong>Tecnologías:</strong> React, Node.js, Firebase, TSX/CSS.</p>
+            </article>
+
+            <article class="project">
+              <h4>Sistema IoT de detección de incendios</h4>
+              <p class="muted">ESP32 con sensores (temperatura, gas, detección de fuego), envío por MQTT y panel web de monitorización para alertas en Cerros Orientales (Bogotá).</p>
+              <p class="muted"><strong>Tecnologías:</strong> ESP32, MQTT, Python, Firebase, Dashboard web.</p>
+            </article>
+
+            <article class="project">
+              <h4>Aplicación bancaria (principios SOLID)</h4>
+              <p class="muted">Aplicación con seguridad básica y arquitectura modular aplicando SOLID.</p>
+              <p class="muted"><strong>Tecnologías:</strong> Java / Node.js.</p>
+            </article>
+
+            <article class="project">
+              <h4>Sistema POS (web + móvil) para restaurante</h4>
+              <p class="muted">Roles: administrador, mesero, cocinero. Integración con QR para menú y pedidos por mesa.</p>
+              <p class="muted"><strong>Tecnologías:</strong> React Native, Node.js, Firebase.</p>
+            </article>
+
+            <article class="project">
+              <h4>LazosVet — App para veterinarias (web + móvil)</h4>
+              <p class="muted">Agenda, historial médico, registro de pacientes, roles y red social interna para propietarios y veterinarios.</p>
+              <p class="muted"><strong>Tecnologías:</strong> React, React Native, Firebase, Node.js.</p>
+            </article>
+
+            <article class="project">
+              <h4>Análisis de datos de pádel (en desarrollo)</h4>
+              <p class="muted">Pipeline de análisis para métricas y recomendaciones de juego.</p>
+              <p class="muted"><strong>Tecnologías:</strong> Python, pandas, visualización.</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="habilidades" class="section">
+          <h3>Habilidades</h3>
+
+          <div class="grid-2">
+            <div>
+              <h4>Habilidades técnicas</h4>
+              <ul>
+                <li>Lenguajes: Python, C++, Go, JavaScript/TypeScript, Java (Android).</li>
+                <li>Frontend: HTML, CSS, React (TSX/JSX), Figma.</li>
+                <li>Backend: Node.js, APIs REST, Firebase.</li>
+                <li>IoT: ESP32, sensores, MQTT.</li>
+                <li>Infra: Docker, Git (GitHub/GitLab).</li>
+              </ul>
+            </div>
+
+            <div>
+              <h4>Habilidades blandas</h4>
+              <ul>
+                <li>Comunicación efectiva y presentaciones técnicas (public speaking)</li>
+                <li>Trabajo en equipo y colaboración multidisciplinaria</li>
+                <li>Liderazgo en proyectos pequeños</li>
+                <li>Resolución de problemas y pensamiento crítico</li>
+                <li>Gestión del tiempo y priorización</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section id="intereses-hobbies" class="section">
+          <h3>Intereses & hobbies</h3>
+          <ul>
+            <li>Piloto junior de automovilismo — miembro de clubes en Bogotá y Sabana.</li>
+            <li>Tocar guitarra, gastronomía y viajes culturales.</li>
+            <li>Actividades extremas (paracaidismo) y deportes al aire libre.</li>
+            <li>Voluntariado y actividades sociales a favor de animales.</li>
+            <li>Inductor de ingeniria informatica en la Universidad de la Sabana</li>
+          </ul>
+        </section>
+      </div><!-- /.sections-wrap -->
+
+      <footer>
+        <div class="muted">Disponible para prácticas, proyectos y entrevistas — listo para aportar en arquitectura y sistemas embebidos.</div>
+        <div class="links">
+          <a class="btn" href="#" onclick="window.print();return false;">Imprimir / Guardar PDF</a>
+          <a class="btn" href="mailto:rodriguez.samuel2006@gmail.com">Contactar</a>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    // lógica para mostrar/ocultar secciones y para hacer scroll dentro del wrapper de secciones
+    (function(){
+      const navBtns = document.querySelectorAll('.nav-btn');
+      const sections = Array.from(document.querySelectorAll('.sections-wrap .section'));
+      const wrapper = document.getElementById('sections-wrap');
+
+      const showAll = () => sections.forEach(s => s.classList.remove('hidden-by-toggle'));
+      const showOnly = id => sections.forEach(s => {
+        if (s.id === id) s.classList.remove('hidden-by-toggle');
+        else s.classList.add('hidden-by-toggle');
+      });
+
+      function setActiveButton(activeBtn) {
+        navBtns.forEach(b => b.classList.remove('active'));
+        if (activeBtn) activeBtn.classList.add('active');
+      }
+
+      // default: mostrar todo
+      setActiveButton(document.querySelector('.nav-btn[data-target="all"]'));
+
+      navBtns.forEach(btn => {
+        btn.addEventListener('click', e => {
+          e.preventDefault();
+          const target = btn.getAttribute('data-target');
+          if (!target) return;
+          if (target === 'all') {
+            showAll();
+            setActiveButton(btn);
+            // scroll wrapper to top
+            wrapper.scrollTo({ top: 0, behavior: 'smooth' });
+            return;
+          }
+          showOnly(target);
+          setActiveButton(btn);
+          // scroll the shown section into view within the wrapper
+          const el = document.getElementById(target);
+          if (el) {
+            setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'start' }), 80);
+          }
+        });
+      });
+
+      // support hash links (fallback)
+      window.addEventListener('hashchange', () => {
+        const id = location.hash.replace('#','');
+        if (!id) return;
+        const btn = document.querySelector(`.nav-btn[data-target="${id}"]`);
+        if (btn) btn.click();
+      });
+    })();
+  </script>
+</body>
+</html>
